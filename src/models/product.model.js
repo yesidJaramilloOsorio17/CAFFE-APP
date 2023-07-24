@@ -1,48 +1,47 @@
-const { DataTypes } = require("sequelize");
+const { DataTypes } = require('sequelize');
 
-const { db } = require("../database/config");
+const { db } = require('../database/config');
 
-const Product = db.define("products",{
-id: {
+const Product = db.define('products', {
+  id: {
     type: DataTypes.INTEGER,
-    autoIncrement:true,
+    autoIncrement: true,
     allowNull: false,
     primaryKey: true,
-},
-name: {
+  },
+  name: {
     type: DataTypes.STRING(30),
-    allowNull: false
-},
-ingredients: {
+    allowNull: false,
+  },
+  ingredients: {
     type: DataTypes.TEXT,
     allowNull: false,
   },
-image: {
-    type:DataTypes.STRING,
+  image: {
+    type: DataTypes.STRING,
     allowNull: false,
-},
-description: {
+  },
+  description: {
     type: DataTypes.TEXT,
     allowNull: false,
   },
-price: {
+  price: {
     type: DataTypes.FLOAT,
     allowNull: false,
-},
-quantity: {
+  },
+  quantity: {
     type: DataTypes.INTEGER,
     allowNull: false,
   },
-isNew:{
-    type: DataTypes.BOOLEAN,
-    allowNull: false,
-    defaultValue: true,
-},
-status: {
+  isNew: {
     type: DataTypes.BOOLEAN,
     allowNull: false,
     defaultValue: true,
   },
-
+  status: {
+    type: DataTypes.BOOLEAN,
+    allowNull: false,
+    defaultValue: true,
+  },
 });
 module.exports = Product;
